@@ -1,12 +1,8 @@
-<?xml version='1.0'?>
-<sdf version='1.6'>
-  <model name='iris'>
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="iris">
     <pose>0 0 0.194923 0 0 0</pose>
-    <link name='base_link'>
-      <velocity_decay>
-        <linear>0.0</linear>
-        <angular>0.0</angular>
-      </velocity_decay>
+    <link name="base_link">
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>1.5</mass>
@@ -19,7 +15,7 @@
           <izz>0.017</izz>
         </inertia>
       </inertial>
-      <collision name='base_link_collision_fl'>
+      <collision name="base_link_collision_fl">
         <pose>0.13 0.22 -0.08 0 0 0</pose>
         <geometry>
           <box>
@@ -41,7 +37,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='base_link_collision_fr'>
+      <collision name="base_link_collision_fr">
         <pose>0.13 -0.22 -0.08 0 0 0</pose>
         <geometry>
           <box>
@@ -63,7 +59,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='base_link_collision_br'>
+      <collision name="base_link_collision_br">
         <pose>-0.13 -0.22 -0.08 0 0 0</pose>
         <geometry>
           <box>
@@ -85,7 +81,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='base_link_collision_bl'>
+      <collision name="base_link_collision_bl">
         <pose>-0.13 0.22 -0.08 0 0 0</pose>
         <geometry>
           <box>
@@ -107,20 +103,23 @@
           </friction>
         </surface>
       </collision>
-      <visual name='base_link_visual'>
+      <visual name="base_link_visual">
         <geometry>
           <mesh>
             <uri>model://iris_base/meshes/iris.dae</uri>
           </mesh>
         </geometry>
         <material>
-          <script>
+          <!--script>
             <name>Gazebo/DarkGrey</name>
-          </script>
+          </script-->
+          <ambient>0.175 0.175 0.175 1.0</ambient>
+          <diffuse>0.175 0.175 0.175 1.0</diffuse>
+          <specular>0.175 0.175 0.175 1.0</specular>
         </material>
       </visual>
 
-      <visual name='front_left_leg_visual'>
+      <visual name="front_left_leg_visual">
         <pose>0.123 0.22 -0.11 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -129,13 +128,16 @@
           </cylinder>
         </geometry>
         <material>
-          <script>
+          <!-- <script>
             <name>Gazebo/FlatBlack</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
+          </script> -->
+          <ambient>0.1 0.1 0.1 1.0</ambient>
+          <diffuse>0.1 0.1 0.1 1.0</diffuse>
+          <specular>0.01 0.01 0.01 1.0</specular>
         </material>
       </visual>
-      <visual name='front_right_leg_visual'>
+      <visual name="front_right_leg_visual">
         <pose>0.123 -0.22 -0.11 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -144,13 +146,16 @@
           </cylinder>
         </geometry>
         <material>
-          <script>
+          <!-- <script>
             <name>Gazebo/FlatBlack</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
+          </script> -->
+          <ambient>0.1 0.1 0.1 1.0</ambient>
+          <diffuse>0.1 0.1 0.1 1.0</diffuse>
+          <specular>0.01 0.01 0.01 1.0</specular>
         </material>
       </visual>
-      <visual name='rear_left_leg_visual'>
+      <visual name="rear_left_leg_visual">
         <pose>-0.140 0.21 -0.11 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -159,13 +164,16 @@
           </cylinder>
         </geometry>
         <material>
-          <script>
+          <!-- <script>
             <name>Gazebo/FlatBlack</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
+          </script> -->
+          <ambient>0.1 0.1 0.1 1.0</ambient>
+          <diffuse>0.1 0.1 0.1 1.0</diffuse>
+          <specular>0.01 0.01 0.01 1.0</specular>
         </material>
       </visual>
-      <visual name='rear_right_leg_visual'>
+      <visual name="rear_right_leg_visual">
         <pose>-0.140 -0.21 -0.11 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -174,17 +182,20 @@
           </cylinder>
         </geometry>
         <material>
-          <script>
+          <!-- <script>
             <name>Gazebo/FlatBlack</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
+          </script> -->
+          <ambient>0.1 0.1 0.1 1.0</ambient>
+          <diffuse>0.1 0.1 0.1 1.0</diffuse>
+          <specular>0.01 0.01 0.01 1.0</specular>
         </material>
       </visual>
     </link>
-    <link name='iris/ground_truth/odometry_sensorgt_link'>
-      <pose>0 0 0 0 -0 0</pose>
+    <link name="iris/ground_truth/odometry_sensorgt_link">
+      <pose>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.15</mass>
         <inertia>
           <ixx>0.0001</ixx>
@@ -196,7 +207,7 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='iris/ground_truth/odometry_sensorgt_joint' type='revolute'>
+    <joint name="iris/ground_truth/odometry_sensorgt_joint" type="revolute">
       <child>iris/ground_truth/odometry_sensorgt_link</child>
       <parent>base_link</parent>
       <axis>
@@ -204,21 +215,14 @@
         <limit>
           <lower>0</lower>
           <upper>0</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
         </limit>
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-      <physics>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-        </ode>
-      </physics>
     </joint>
-    <link name='iris/imu_link'>
+    <link name="imu_link">
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.15</mass>
@@ -237,67 +241,26 @@
         <update_rate>1000.0</update_rate>
       </sensor>
     </link>
-    <joint name='iris/imu_joint' type='revolute'>
-      <child>iris/imu_link</child>
+    <joint name="imu_joint" type="revolute">
+      <child>imu_link</child>
       <parent>base_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
           <lower>0</lower>
           <upper>0</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
         </limit>
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-      <physics>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-        </ode>
-      </physics>
     </joint>
-<!--
-    <link name='iris/imugt_link'>
-      <pose>0 0 0 0 -0 0</pose>
+
+    <link name="rotor_0">
+      <pose>0.13 -0.22 0.023 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>1e-02</mass>
-        <inertia>
-          <ixx>0.0002</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.0002</iyy>
-          <iyz>0</iyz>
-          <izz>0.0002</izz>
-        </inertia>
-      </inertial>
-    </link>
-    <joint name='iris/imugt_joint' type='revolute'>
-      <child>iris/imugt_link</child>
-      <parent>base_link</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
--->
-    <link name='rotor_0'>
-      <pose>0.13 -0.22 0.023 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
@@ -308,7 +271,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='rotor_0_collision'>
+      <collision name="rotor_0_collision">
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -316,17 +279,9 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
-      <visual name='rotor_0_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+      <visual name="rotor_0_visual">
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -334,17 +289,17 @@
           </mesh>
         </geometry>
         <material>
-          <script>
+          <!-- <script>
             <name>Gazebo/Blue</name>
             <uri>__default__</uri>
-          </script>
+          </script> -->
+          <ambient>0 0 1</ambient>
+          <diffuse>0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
-      <self_collide>0</self_collide>
     </link>
-    <joint name='rotor_0_joint' type='revolute'>
+    <joint name="rotor_0_joint" type="revolute">
       <child>rotor_0</child>
       <parent>base_link</parent>
       <axis>
@@ -358,16 +313,11 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-      <physics>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-        </ode>
-      </physics>
     </joint>
-    <link name='rotor_1'>
-      <pose>-0.13 0.2 0.023 0 -0 0</pose>
+    <link name="rotor_1">
+      <pose>-0.13 0.2 0.023 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
@@ -378,25 +328,17 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='rotor_1_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+      <collision name="rotor_1_collision">
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
             <radius>0.1</radius>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
-      <visual name='rotor_1_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+      <visual name="rotor_1_visual">
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -404,17 +346,17 @@
           </mesh>
         </geometry>
         <material>
-          <script>
+          <!-- <script>
             <name>Gazebo/DarkGrey</name>
             <uri>__default__</uri>
-          </script>
+          </script> -->
+          <ambient>0.175 0.175 0.175  1.0</ambient>
+          <diffuse>0.175 0.175 0.175  1.0</diffuse>
+          <specular>0.175 0.175 0.175 1.0</specular>
         </material>
       </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
-      <self_collide>0</self_collide>
     </link>
-    <joint name='rotor_1_joint' type='revolute'>
+    <joint name="rotor_1_joint" type="revolute">
       <child>rotor_1</child>
       <parent>base_link</parent>
       <axis>
@@ -428,16 +370,11 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-      <physics>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-        </ode>
-      </physics>
     </joint>
-    <link name='rotor_2'>
+    <link name="rotor_2">
       <pose>0.13 0.22 0.023 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
@@ -448,24 +385,16 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='rotor_2_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+      <collision name="rotor_2_collision">
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
             <radius>0.1</radius>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
-      <visual name='rotor_2_visual'>
+      <visual name="rotor_2_visual">
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -474,17 +403,17 @@
           </mesh>
         </geometry>
         <material>
-          <script>
+          <!-- <script>
             <name>Gazebo/Blue</name>
             <uri>__default__</uri>
-          </script>
+          </script> -->
+          <ambient>0 0 1</ambient>
+          <diffuse>0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
-      <self_collide>0</self_collide>
     </link>
-    <joint name='rotor_2_joint' type='revolute'>
+    <joint name="rotor_2_joint" type="revolute">
       <child>rotor_2</child>
       <parent>base_link</parent>
       <axis>
@@ -498,16 +427,11 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-      <physics>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-        </ode>
-      </physics>
     </joint>
-    <link name='rotor_3'>
-      <pose>-0.13 -0.2 0.023 0 -0 0</pose>
+    <link name="rotor_3">
+      <pose>-0.13 -0.2 0.023 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
@@ -518,25 +442,17 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='rotor_3_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+      <collision name="rotor_3_collision">
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
             <radius>0.1</radius>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
-      <visual name='rotor_3_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+      <visual name="rotor_3_visual">
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -544,17 +460,17 @@
           </mesh>
         </geometry>
         <material>
-          <script>
+          <!-- <script>
             <name>Gazebo/DarkGrey</name>
             <uri>__default__</uri>
-          </script>
+          </script> -->
+          <ambient>0.175 0.175 0.175 1.0</ambient>
+          <diffuse>0.175 0.175 0.175 1.0</diffuse>
+          <specular>0.175 0.175 0.175 1.0</specular>
         </material>
       </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
-      <self_collide>0</self_collide>
     </link>
-    <joint name='rotor_3_joint' type='revolute'>
+    <joint name="rotor_3_joint" type="revolute">
       <child>rotor_3</child>
       <parent>base_link</parent>
       <axis>
@@ -568,11 +484,6 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-      <physics>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-        </ode>
-      </physics>
     </joint>
     <static>0</static>
   </model>
