@@ -4,12 +4,13 @@
     <static>true</static>
     <link name="link">
       <collision name="collision">
-<!--         <pos>20 0 -10</pos> -->
         <geometry>
           <heightmap>
             <uri>model://winding_valley_heightmap/materials/textures/heightmap.png</uri>
             <size>1000 1000 25</size>
-            <pos>0 0 -10</pos>
+            <!-- gz sim not offsetting collision -->
+            <!-- <pos>0 0 -4</pos> -->
+            <pos>0 0 0</pos>
           </heightmap>
         </geometry>
       </collision>
@@ -18,19 +19,19 @@
         <geometry>
           <heightmap>
             <texture>
-              <diffuse>file://media/materials/textures/dirt_diffusespecular.png</diffuse>
-              <normal>file://media/materials/textures/flat_normal.png</normal>
-              <size>10</size>
+              <diffuse>model://winding_valley_heightmap/materials/textures/dirt_diffusespecular.png</diffuse>
+              <normal>model://winding_valley_heightmap/materials/textures/flat_normal.png</normal>
+              <size>20</size>
             </texture>
             <texture>
-              <diffuse>file://media/materials/textures/grass_diffusespecular.png</diffuse>
-              <normal>file://media/materials/textures/flat_normal.png</normal>
-              <size>10</size>
+              <diffuse>model://winding_valley_heightmap/materials/textures/grass_diffusespecular.png</diffuse>
+              <normal>model://winding_valley_heightmap/materials/textures/flat_normal.png</normal>
+              <size>20</size>
             </texture>
             <texture>
-              <diffuse>file://media/materials/textures/fungus_diffusespecular.png</diffuse>
-              <normal>file://media/materials/textures/flat_normal.png</normal>
-              <size>10</size>
+              <diffuse>model://winding_valley_heightmap/materials/textures/fungus_diffusespecular.png</diffuse>
+              <normal>model://winding_valley_heightmap/materials/textures/flat_normal.png</normal>
+              <size>20</size>
             </texture>
             <blend>
               <min_height>1.5</min_height>
@@ -42,7 +43,8 @@
             </blend>
             <uri>model://winding_valley_heightmap/materials/textures/heightmap.png</uri>
             <size>1000 1000 25</size>
-            <pos>0 0 -10</pos>
+            <!-- <pos>0 0 -4</pos> -->
+            <pos>0 0 0</pos>
           </heightmap>
         </geometry>
       </visual>
